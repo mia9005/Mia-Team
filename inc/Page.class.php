@@ -97,20 +97,23 @@
          * store gallery function printer
          * @return string
          */
-        public static function PageStoreGallery( $product ) : string {
-
+        public static function PageStoreGallery( $productList ) : string {
+            $row = "";
             $htmlStoreGallery = '
             <div class="store-gallery" >
-                <section>
+                <section>';
+                foreach($productList as $product){
+                    $row .='
                     <figure>
                         <img src='.$product->img.' alt='.$product->alt.'>
                         <figcaption>
                             <h3>'.$product->name.'</h3>
-                            <span>'.$product->price.'</span>
+                            <span>$'.$product->price.'</span>
                             <button>Add to the cart <i class="fa-solid fa-cart-shopping"></i></button>
                         </figcaption>
-                    </figure>
-                </section>
+                    </figure>';
+                }
+            $htmlStoreGallery .= $row.'</section>
             </div>
             ';
 

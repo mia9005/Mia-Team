@@ -1,4 +1,4 @@
-public function setId($) : void int {
+<!-- public function setId($) : void int {
     $this->id = $ ;
 }
 
@@ -52,4 +52,4 @@ public function setMechanics($) : void array {
 
 public function setDomains($) : void array {
     $this->domains = $ ;
-}
+} -->
