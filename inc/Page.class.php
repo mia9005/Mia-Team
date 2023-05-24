@@ -1,6 +1,6 @@
 <?php
     class Page {
-        
+
         /**
          * html openning tag always first
          * @return string
@@ -91,5 +91,29 @@
             ';
 
             return $htmlFooter;
+        }
+
+        /**
+         * store gallery function printer
+         * @return string
+         */
+        public static function PageStoreGallery( $product ) : string {
+
+            $htmlStoreGallery = '
+            <div class="store-gallery" >
+                <section>
+                    <figure>
+                        <img src='.$product->img.' alt='.$product->alt.'>
+                        <figcaption>
+                            <h3>'.$product->name.'</h3>
+                            <span>'.$product->price.'</span>
+                            <button>Add to the cart <i class="fa-solid fa-cart-shopping"></i></button>
+                        </figcaption>
+                    </figure>
+                </section>
+            </div>
+            ';
+
+            return $htmlStoreGallery;
         }
     }
