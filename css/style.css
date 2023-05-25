@@ -3,6 +3,14 @@
     margin: 0;
 }
 
+:root{
+    --mainColor : #ff571f ;
+    --whiteColor : #eee5e9 ; 
+    --blackColor : #33261d ; 
+    --grayColor : #433740 ; 
+}
+
+
 a{
    text-decoration: none;
 }
