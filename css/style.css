@@ -3,6 +3,8 @@
     margin: 0;
 }
 
+
+
 a{
    text-decoration: none;
 }
@@ -13,6 +15,7 @@ body{
     row-gap: 5vh;
     background-color: gainsboro;
 }
+
 img {
     width: 100%;
 }

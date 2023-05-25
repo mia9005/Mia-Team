@@ -15,7 +15,7 @@
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link rel="stylesheet" href="../Home/css/style.css">
+                <link rel="stylesheet" href="../Mia-Team/css/style.css">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
                 <title>Document</title>
             </head>
@@ -100,7 +100,7 @@
         public static function PageStoreGallery( $productList ) : string {
             $row = "";
             $htmlStoreGallery = '
-            <div class="store-gallery" >
+            <div class="store-gallery">
                 <section>';
                 foreach($productList as $product){
                     $row .='
@@ -118,5 +118,30 @@
             ';
 
             return $htmlStoreGallery;
+        }
+
+        /**
+         * store product function printer
+         * @return string
+         */
+        public static function PageProduct( $product ) : string {
+            $row = "";
+            $htmlStoreProduct = '
+            <div class="store-product">
+                <section>
+                    <figure>
+                        <img src='.$product->img.' alt='.$product->alt.' >
+                    </figure>
+                    <article>
+                        <h2>'.$product->name.'</h2>
+                        <p>product description Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, nisi.</p>
+                        <span>$'.$product->price.'</span>
+                        <button>Add to the cart <i class="fa-solid fa-cart-shopping"></i></button>
+                    </article>
+                </section>
+            </div>
+            ';
+
+            return $htmlStoreProduct;
         }
     }
