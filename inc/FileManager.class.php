@@ -41,7 +41,7 @@
                     $gameData[1],
                     $gameData[2],
                     $gameData[3],
-                    $gameData[2]
+                    $gameData[4]
                 );
 
                 $gamesList[$tempGame->name] = $tempGame;

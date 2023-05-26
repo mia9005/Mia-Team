@@ -1,4 +1,6 @@
 <?php
+
+
     class GameTest {
 
         public int $id;
@@ -13,7 +15,6 @@
             float $price,
             string $img,
             int $alt,
-
         ){
             $this->id = $id;
             $this->name = $name;
