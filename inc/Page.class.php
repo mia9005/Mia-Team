@@ -97,27 +97,53 @@
          * store gallery function printer
          * @return string
          */
-        public static function PageStoreGallery( $productList ) : string {
-            $row = "";
-            $htmlStoreGallery = '
-            <div class="store-gallery">
-                <section>';
-                foreach($productList as $product){
-                    $row .='
-                    <figure>
-                        <img src='.$product->img.' alt='.$product->alt.'>
-                        <figcaption>
-                            <h3>'.$product->name.'</h3>
-                            <span>$'.$product->price.'</span>
-                            <button>Add to the cart <i class="fa-solid fa-cart-shopping"></i></button>
-                        </figcaption>
-                    </figure>';
-                }
-            $htmlStoreGallery .= $row.'</section>
-            </div>
-            ';
+        public static function PageStoreCatalog( $productList ) : string {
 
-            return $htmlStoreGallery;
+            $htmlStoreCatalog = '<div class="store-gallery">';
+
+            $htmlStoreCatalog .= self::storeFilter();
+            $htmlStoreCatalog .= self::storeCatalog($productList);
+                
+            $htmlStoreCatalog .='</div>';
+
+            return $htmlStoreCatalog;
+        }
+
+        public static function storeFilter(){
+            $htmlStoreFilter = '
+            <article>
+                <form action="" method="GET">
+                    <select name="sortBy">
+                        <option selected disabled>-->Select Option<--</option>
+                        <option value="name">Name</option>
+                        <option value="price">Price</option>
+                        <option value="id">Id</option>
+                    </select>
+                    <button type="submit">Sort</button>
+                </form>                     
+            </article>';
+
+            return $htmlStoreFilter;
+        }
+
+        public static function storeCatalog( $productList ){
+
+            $htmlStoreCatalog = '<section>';
+
+            foreach($productList as $product){
+                $htmlStoreCatalog .='
+                <figure>
+                    <img src='.$product->img.' alt='.$product->alt.'>
+                    <figcaption>
+                        <h3>'.$product->name.'</h3>
+                        <span>$'.$product->price.'</span>
+                        <button>Add to the cart <i class="fa-solid fa-cart-shopping"></i></button>
+                    </figcaption>
+                </figure>';
+            }
+            $htmlStoreCatalog .= '<section/>';
+
+            return $htmlStoreCatalog;
         }
 
         /**

@@ -118,7 +118,11 @@ img {
 
     /* Store Page */
 
-    .store-gallery > section {
+    /* .store-gallery > article {
+        display: flex;
+    } */
+
+    .store-gallery  section {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -126,7 +130,8 @@ img {
     }
 
     .store-gallery figure {
-        background-color: ghostwhite;
+        
+        background-color: gainsboro;
         padding: 2vh;
         width: 15%;
         height: 10%;

@@ -12,14 +12,24 @@
         private string $name;
 
         /**
+         * @var float price
+         */
+        private float $price;
+
+        /**
          * @var integer year published
          */
         private int $year;
+        
+        /**
+         * @var string category
+         */
+        private int $category;
 
         /**
-         * @var integer min player
+         * @var integer minimun age
          */
-        private int $minPlayer;
+        private int $esbr;
 
         /**
          * @var integer max player
@@ -27,101 +37,49 @@
         private int $maxPlayer;
 
         /**
-         * @var integer play time
+         * @var string number of rates
          */
-        private int $playTime;
+        private string $brand;
 
         /**
-         * @var integer minimun age
+         * @var integer complexity
          */
-        private int $minAge;
-
-        /**
-         * @var integer number of rates
-         */
-        private int $rateNum;
-
-        /**
-         * @var float rate average
-         */
-        private float $rateAvg;
-
-        /**
-         * @var integer bbg rank
-         */
-        private int $BBGRank;
-
-        /**
-         * @var float complexity
-         */
-        private float $complexity;
-
-        /**
-         * @var integer owned users
-         */
-        private int $ownedUsers;
-
-        /**
-         * @var array mechanics
-         */
-        private array $mechanics;
-
-        /**
-         * @var array domains
-         */
-        private array $domains;
+        private int $complexity;
 
         /**
          * game constructor
          *
          * @param integer $id
          * @param string $name
+         * @param float $price
          * @param integer $year
-         * @param integer $minPlayer
+         * @param string $category
+         * @param integer $esbr
          * @param integer $maxPlayer
-         * @param integer $playTime
-         * @param integer $minAge
-         * @param integer $rateNum
-         * @param float $rateAvg
-         * @param integer $BGGRank
-         * @param float $complexity
-         * @param float $ownedUsers
-         * @param array $mechanics
-         * @param array $domains
+         * @param string $brand
+         * @param int $complexity
          */
         public function __construct(
 
             int $id,
             string $name,
+            float $price, 
             int $year,
-            int $minPlayer, 
+            string $category, 
+            int $esbr, 
             int $maxPlayer, 
-            int $playTime, 
-            int $minAge, 
-            int $rateNum,
-            float $rateAvg,
-            int $BGGRank,
-            float $complexity,
-            float $ownedUsers,
-            array $mechanics,
-            array $domains
-
+            int $brand,
+            int $complexity,
         ){
             $this->id = $id;
             $this->name = $name;
+            $this->price = $price;
             $this->year = $year;
-            $this->minPlayer = $minPlayer;
+            $this->category = $category;
+            $this->esbr = $esbr;
             $this->maxPlayer = $maxPlayer;
-            $this->playTime = $playTime;
-            $this->minAge = $minAge;
-            $this->rateNum = $rateNum;
-            $this->rateAvg = $rateAvg;
-            $this->BGGRank = $BGGRank;
+            $this->brand = $brand;
             $this->complexity = $complexity;
-            $this->ownedUsers = $ownedUsers;
-            $this->mechanics = $mechanics;
-            $this->domains = $domains;
-
         }
 
         // Get functions
@@ -148,10 +106,10 @@
         }
 
         /**
-         * @return integer
+         * @return float
          */
-        public function getMinPlayer() : int {
-            return $this->minPlayer;
+        public function getPrice() : float {
+            return $this->price;
         }
 
         /**
@@ -162,38 +120,24 @@
         }
 
         /**
-         * @return integer
+         * @return string
          */
-        public function getPlayTime() : int {
-            return $this->playTime;
+        public function getCategory() : string {
+            return $this->category;
         }
 
         /**
          * @return integer
          */
-        public function getMinAge() : int{
-            return $this->minAge;
+        public function getEsbr() : int{
+            return $this->esbr;
         }
 
         /**
-         * @return integer
+         * @return string
          */
-        public function getRateNum() : int {
-            return $this->rateNum;
-        }
-
-        /**
-         * @return float
-         */
-        public function getRateAvg() : float{
-            return $this->rateAvg;
-        }
-
-        /**
-         * @return integer
-         */
-        public function getBGGRank() : int {
-            return $this->BGGRank;
+        public function getBrand() : string {
+            return $this->brand;
         }
 
         /**
@@ -201,27 +145,6 @@
          */
         public function getComplexity() : float{
             return $this->complexity;
-        }
-
-        /**
-         * @return integer
-         */
-        public function getOwnedUsers() : int{
-            return $this->ownedUsers;
-        }
-
-        /**
-         * @return array
-         */
-        public function getMechanics() : array {
-            return $this->mechanics;
-        }
-
-        /**
-         * @return array
-         */
-        public function getDomains() : array {
-            return $this->domains;
         }
 
         // Set functions
@@ -242,11 +165,11 @@
         }
         
         /**
-         * @param integer $minPlayer
+         * @param float $price
          * @return void
          */
-        public function setMinPlayer( int $minPlayer ) : void  {
-            $this->minPlayer = $minPlayer  ;
+        public function setPrice( float $price ) : void  {
+            $this->price = $price  ;
         }
         
         /**
@@ -258,43 +181,27 @@
         }
         
         /**
-         * @param integer $playTime
+         * @param integer $esbr
          * @return void
          */
-        public function setPlayTime( int $playTime ) : void  {
-            $this->playTime = $playTime ;
+        public function setEsbr( int $esbr ) : void  {
+            $this->esbr = $esbr ;
         }
         
         /**
-         * @param integer $minAge
+         * @param string $brand
          * @return void
          */
-        public function setMinAge( int $minAge ) : void {
-            $this->minAge = $minAge ;
+        public function setBrand(  string $brand ) : void {
+            $this->brand = $brand ;
         }
         
         /**
-         * @param integer $rateNum
+         * @param string $rateNum
          * @return void
          */
-        public function setRateNum( int $rateNum ) : void  {
-            $this->rateNum = $rateNum ;
-        }
-        
-        /**
-         * @param float $rateAvg
-         * @return void
-         */
-        public function setRateAvg( float $rateAvg ) : void {
-            $this->rateAvg = $rateAvg ;
-        }
-        
-        /**
-         * @param integer $BGGRank
-         * @return void
-         */
-        public function setBGGRank( int $BGGRank ) : void  {
-            $this->BGGRank = $BGGRank ;
+        public function setCategory( string $category ) : void  {
+            $this->category = $category ;
         }
         
         /**
@@ -303,30 +210,6 @@
          */
         public function setComplexity( float $complexity ) : void {
             $this->complexity = $complexity ;
-        }
-        
-        /**
-         * @param integer $ownedUsers
-         * @return void
-         */
-        public function setOwnedUsers( int $ownedUsers ) : void {
-            $this->ownedUsers = $ownedUsers ;
-        }
-        
-        /**
-         * @param array $mechanics
-         * @return void
-         */
-        public function setMechanics( array $mechanics ) : void  {
-            $this->mechanics = $mechanics ;
-        }
-        
-        /**
-         * @param array $domains
-         * @return void
-         */
-        public function setDomains( array $domains ) : void  {
-            $this->domains = $domains ;
         }
 
     }
